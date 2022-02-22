@@ -1,0 +1,141 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container .left-content{
+    width: 380px;
+}
+
+.heading{
+    color: #202124;
+    font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.3333;
+    margin-bottom: 20px;
+}
+
+input[type="text"],[type="password"]{
+    border-radius: 4px;
+    color: #202124; 
+    border: 1px solid rgb(218, 218, 218);
+    padding: 10px 8px;
+    width: 100%;
+    outline: none;
+}
+
+input[type="text"]:focus,[type="password"]:focus{
+    border: 2px solid #1a73e8;
+}
+
+
+.use-current a{
+    color:#1a73e8 ;
+    text-decoration: none;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-size: .875rem;
+    letter-spacing: .0107142857em;
+    /* font-weight: 500; */
+    padding: 10px 0;
+}
+
+.use-current a:hover{
+    background-color: #9ec7f021;
+    color: #1D4ED8;
+    cursor: default;
+    border-radius: 2px;
+    padding: 10px 0;
+}
+
+/* input field designs */
+.input-field{
+    position: relative;
+    margin: 10px 0;
+}
+
+.top{
+    margin-top: 20px;
+}
+
+.input-field label{
+   position: absolute;
+   left: 0;
+   padding: 10px;
+   font-size: 14px;
+   font-weight: 400;
+   font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+   color: rgb(63, 63, 63);
+}
+
+.input-field input:focus ~ label, input:valid ~ label{
+    color:#1a73e8;
+    font-size: 10px;
+    transition: .2s;
+    top: -10px;
+    background-color: transparent;
+    background-color: white;
+    font-weight:500;
+    padding: 2px;
+    left: 2px;
+}
+
+/* .input-field input:focus ~ input{
+    border: 1px solid #1a73e8;
+    opacity: 0;
+    transform: none;
+    transition: opacity .15s cubic-bezier(.4,0,.2,1);
+} */
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.span{
+    color: rgb(63, 63, 63);
+    font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+
+.row .input-field{
+    flex-basis: 48%;
+}
+
+.right-pic{
+    text-align: center;
+}
+
+.right-pic span{
+    color: #202124;
+    font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.signIn-sec{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signIn-sec button{
+    color: #fff;
+    background-color: #2563EB;
+    border: none;
+    padding: .6rem 1.5rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: box-shadow 0.6s;
+}
+
+.signIn-sec button:hover{
+    background-color: #1D4ED8;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    
+}

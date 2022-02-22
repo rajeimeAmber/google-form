@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'google-form';
+
+  showPassword:string = "password"
+
+  onCheck(event:any){
+    console.log(event.target)
+    if(this.showPassword == "password"){
+      this.showPassword = "text"
+    }
+    else{
+      this.showPassword = "password"
+    }
+  }
 }
