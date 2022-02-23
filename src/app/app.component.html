@@ -1,63 +1,70 @@
-<div class="container">
-
-  <div class="left-content">
-    <form>
-      <div class="logo">
-        <img src="assets/images/logo.svg" alt="">
-      </div>
-     
-      <div class="heading-div">
-        <span class="heading">Create your Google Account</span>
-      </div>
-     
-      <div class="row top">
-        <div class="input-field">
-          <input type="text" name="firstName" required>
-          <label for="firstName">First Name</label>
+<div class="outer-container">
+  <div class="container">
+    <div class="left-content">
+      <form>
+        <div class="logo">
+          <img src="assets/images/logo.svg" alt="">
         </div>
-    
-        <div class="input-field">
-          <input type="text" name="lastName" required>
-          <label for="lastName">Last Name</label>
+       
+        <div class="heading-div">
+          <span class="heading">Create your Google Account</span>
         </div>
-      </div>
-     
-      <div class="input-field">
-        <input type="text" name="userName" required>
-        <label for="userName">User name</label>
-      </div>
-      <!-- <span class="span">You can use letters, numbers & periods</span> -->
-    
-      <div class="use-current"><a href="">Use my current email address instead</a></div>
+       
+        <div class="row top">
+          <div class="input-field">
+            <input type="text" name="firstName" required>
+            <label for="firstName">First Name</label>
+          </div>
       
-      <div class="row">
-        <div class="input-field">
-          <input [type]="showPassword" name="Password" id="" required>
-          <label for="password">Password</label>
+          <div class="input-field">
+            <input type="text" name="lastName" required>
+            <label for="lastName">Last Name</label>
+          </div>
         </div>
+       
+        <div class="input-field">
+          <input type="text" name="userName" required>
+          <label for="userName">User name</label>
+          <div class="spn-div">  <span class="span">You can use letters, numbers & periods</span></div>
+        </div>
+      
+      
+        <div class="use-current"><a href="">Use my current email address instead</a></div>
         
-        <div class="input-field">
-          <input [type]="showPassword" name="confirmPassword" id="" required>
-          <label for="confirmPassword">Confirm</label>
+        <div class="row" style="margin-top: 22px;">
+          <div class="input-field">
+            <input [type]="showPassword" name="Password" id="" required>
+            <label for="password">Password</label>
+          </div>
+          
+          <div class="input-field">
+            <input [type]="showPassword" name="confirmPassword" id="" required>
+            <label for="confirmPassword">Confirm</label>
+          </div>
         </div>
-      </div>
 
-      
-      <div style="position: relative;"> <input type="checkbox" name="" id="" (change)="onCheck($event)" class="checkbox">Show Password 
-      <span class="checkbox-custom"></span>
-      </div>
-
-      <div class="signIn-sec">
-        <div class="use-current"><a href="">Sign in instead</a></div>
-        <button>Next</button>
-      </div>
-     
-    </form>
-  </div>
+        <div class="spn-div"><span class="span">Use 8 or more characters with a mix of letters, numbers & <br> &nbsp; symbols</span></div>
+        
+        <div style="position: relative; margin-top: 10px;"> 
+          <div class="checkbox-input" >
+          <input type="checkbox" name="" id="" (change)="onCheck($event)" class="checkbox"> 
+          <span class="chk-span" style="margin-left: 10px;">Show Password</span> 
+        </div> 
+       
+        </div>
   
-  <div class="right-pic">
-    <img src="assets/images/right-icon.svg" alt="" width="244" height="244">
-    <div><span>One account. All of Google <br> working for you.</span></div>
+        <div class="signIn-sec">
+          <div class="use-current"><a href="">Sign in instead</a></div>
+          <button>Next</button>
+        </div>
+
+      </form>
+    </div>
+    
+    <div class="right-pic">
+      <img src="assets/images/right-icon.svg" alt="" width="244" height="244">
+      <div><span>One account. All of Google <br> working for you.</span></div>
+    </div>
   </div>
 </div>
 

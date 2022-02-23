@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'google-form';
 
+  // show password by click action
   showPassword:string = "password"
 
   onCheck(event:any){
@@ -19,4 +20,5 @@ export class AppComponent {
       this.showPassword = "password"
     }
   }
+
 }
