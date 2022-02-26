@@ -11,7 +11,7 @@
     justify-content: center;
     border: 1px solid rgb(218, 218, 218);
     border-radius: 6px;
-    padding: 4rem;
+    padding: 2.8rem 2.4rem;
     margin: 1.8em;
 }
 
@@ -34,11 +34,11 @@ input[type="text"],[type="password"]{
     border: 1px solid rgb(218, 218, 218);
     padding: 10px 8px;
     width: 100%;
-    outline: none;
 }
 
 input[type="text"]:focus,[type="password"]:focus{
     border: 2px solid #1a73e8;
+    outline:red;
 }
 
 
@@ -48,12 +48,11 @@ input[type="text"]:focus,[type="password"]:focus{
     font-family: "Google Sans",Roboto,Arial,sans-serif;
     font-size: .875rem;
     letter-spacing: .0107142857em;
-    /* font-weight: 500; */
     padding: 10px 4px;
 }
 
 .use-current a:hover{
-    background-color: #9ec7f021;
+    background-color: #9ec7f015;
     color: #1D4ED8;
     cursor: default;
     border-radius: 2px;
@@ -78,7 +77,8 @@ input[type="text"]:focus,[type="password"]:focus{
    font-size: 14px;
    font-weight: 400;
    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
-   color: rgb(63, 63, 63);
+   /* color: rgb(63, 63, 63); */
+   color: rgb(116, 115, 115);
    pointer-events: none;
 }
 
@@ -91,15 +91,8 @@ input[type="text"]:focus,[type="password"]:focus{
     background-color: white;
     font-weight:500;
     padding: 2px;
-    left: 2px;
+    left: 4px;
 }
-
-/* .input-field input:focus ~ input{
-    border: 1px solid #1a73e8;
-    opacity: 0;
-    transform: none;
-    transition: opacity .15s cubic-bezier(.4,0,.2,1);
-} */
 
 .row{
     display: flex;
@@ -109,7 +102,8 @@ input[type="text"]:focus,[type="password"]:focus{
 }
 
 .span{
-    color: rgb(63, 63, 63);
+    /* color: rgb(63, 63, 63); */
+    color: rgb(116, 115, 115);
     font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
     font-size: 12px;
     margin-left: 8px;
@@ -119,6 +113,7 @@ input[type="text"]:focus,[type="password"]:focus{
     flex-basis: 48%;
 }
 
+/* content bbelow right picture */
 .right-pic{
     text-align: center;
 }
@@ -142,16 +137,19 @@ input[type="text"]:focus,[type="password"]:focus{
     color: #fff;
     background-color: #2563EB;
     border: none;
-    padding: .6rem 1.5rem;
+    padding: .5rem 1.5rem;
     border-radius: 2px;
     transition: box-shadow 0.6s;
+    letter-spacing: 0.15px;
+    line-height: 20px
 }
 
 .signIn-sec button:hover{
-    background-color: #1D4ED8;
-    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    background-color: #2857d8;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     cursor: pointer;
-    
+    letter-spacing: 0.15px;
+    line-height: 20px
 }
 
 .chk-span {
@@ -167,10 +165,43 @@ input[type="checkbox"]{
     cursor: pointer;
 }
 
-input[type="checkbox"]:checked + .checkbox-input{
-    border: 1px solid red;
+/* error messages designs */
+.error-mess span{
+    color: #d93025;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    position: relative;
+    top: -10px;
+}
+
+.user-error{
+    color: #d93025;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+}
+ 
+.input.ng-invalid.ng-touched{
+    border: 1px solid #d93025;
+}
+
+.input.ng-invalid.ng-touched:focus{
+    border: 2px solid #d93025;
+}
+.input.ng-invalid.ng-touched:focus ~ label{
+    color: #d93025;;
+}
+
+.checkbox-div{
     display: inline-block;
-    background-color: red;
+    padding: 10px;
     border-radius: 50%;
-    padding: 2px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.checkbox-div:hover{
+    background-color: rgba(0, 0, 0, 0.034);
 }

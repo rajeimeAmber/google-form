@@ -1,7 +1,8 @@
 <div class="outer-container">
   <div class="container">
     <div class="left-content">
-      <form>
+      <!-- form structure begins here -->
+      <form [formGroup]="loginForm" (ngSubmit)="submitted()">
         <div class="logo">
           <img src="assets/images/logo.svg" alt="">
         </div>
@@ -9,45 +10,73 @@
         <div class="heading-div">
           <span class="heading">Create your Google Account</span>
         </div>
-       
-        <div class="row top">
-          <div class="input-field">
-            <input type="text" name="firstName" required>
-            <label for="firstName">First Name</label>
-          </div>
-      
-          <div class="input-field">
-            <input type="text" name="lastName" required>
-            <label for="lastName">Last Name</label>
-          </div>
+ 
+          <div class="row top">
+            <div class="input-field">
+              <input type="text" name="firstName" formControlName="firstName" required class="input">
+              <label for="firstName">First name</label>
+            </div>
+
+            <div class="input-field">
+              <input type="text" name="lastName" formControlName="lastName"  required class="input">
+              <label for="lastName">Last name</label>
+            </div>
         </div>
-       
+        <!-- error message for first name and last name -->
+
+        <div *ngIf="firstName?.invalid || lastName?.invalid"
+        class="error-mess">
+
+          <div *ngIf="firstName?.errors?.['required'] && firstName?.touched  && !lastName?.errors?.['required']" >
+            <span> <fa-icon [icon]="faerror"></fa-icon>&nbsp; Enter first name</span>
+          </div>
+
+          <div *ngIf="lastName?.errors?.['required'] && lastName?.touched  && !firstName?.errors?.['required']" >
+            <span> <fa-icon [icon]="faerror"></fa-icon>&nbsp; Enter last name</span>
+          </div>
+
+          <div *ngIf="firstName?.errors?.['required'] && firstName?.touched && lastName?.errors?.['required'] && lastName?.touched " >
+            <span> <fa-icon [icon]="faerror"></fa-icon>&nbsp; First name and last name required</span>
+          </div>
+        
+        </div>
+        
         <div class="input-field">
-          <input type="text" name="userName" required>
+          <input type="text" name="userName" formControlName="userName"  required class="input">
           <label for="userName">User name</label>
-          <div class="spn-div">  <span class="span">You can use letters, numbers & periods</span></div>
+
+          <!-- error messages for email/username -->
+          <div class="spn-div"> <span class="span" *ngIf="userName?.valid">You can use letters, numbers & periods </span>
+            <span class="user-error" *ngIf="userName?.errors?.['required'] && userName?.touched"> <fa-icon [icon]="faerror"></fa-icon>&nbsp; Choose a Gmail address</span>
+
+            <span class="user-error" *ngIf="userName?.errors?.['minLenght'] || userName?.errors?.['maxLenght'] && userName?.dirty"> <fa-icon [icon]="faerror"></fa-icon>&nbsp; Sorry, your username must be between 6 and 30 characters long.</span>
+          </div>
         </div>
-      
-      
+          <!-- link to account that is already available -->
         <div class="use-current"><a href="">Use my current email address instead</a></div>
         
         <div class="row" style="margin-top: 22px;">
           <div class="input-field">
-            <input [type]="showPassword" name="Password" id="" required>
+            <input [type]="showPassword" name="Password" id="" formControlName="password" required class="input">
             <label for="password">Password</label>
           </div>
           
           <div class="input-field">
-            <input [type]="showPassword" name="confirmPassword" id="" required>
+            <input [type]="showPassword" name="confirmPassword" formControlName="confirmPassword"  id="" required>
             <label for="confirmPassword">Confirm</label>
+            
           </div>
         </div>
+<!-- 
+        <div class="spn-div"><span class="span">Use 8 or more characters with a mix of letters, numbers & <br> &nbsp; symbols</span></div> -->
 
-        <div class="spn-div"><span class="span">Use 8 or more characters with a mix of letters, numbers & <br> &nbsp; symbols</span></div>
+        <div *ngIf="password?.errors?.['required'] && password?.touched " class="error-mess"><span><fa-icon [icon]="faerror"></fa-icon>&nbsp; Enter a password</span>
+          <!-- <mat-hint align="end">Not more then 20 characters long.</mat-hint> -->
+        </div>
         
         <div style="position: relative; margin-top: 10px;"> 
           <div class="checkbox-input" >
-          <input type="checkbox" name="" id="" (change)="onCheck($event)" class="checkbox"> 
+          <div class="checkbox-div"><input type="checkbox" name="" id="" (change)="onCheck($event)" class="checkbox"> </div>
           <span class="chk-span" style="margin-left: 10px;">Show Password</span> 
         </div> 
        
@@ -55,7 +84,7 @@
   
         <div class="signIn-sec">
           <div class="use-current"><a href="">Sign in instead</a></div>
-          <button>Next</button>
+          <button type="submit">Next</button>
         </div>
 
       </form>
